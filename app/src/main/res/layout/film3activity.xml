@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Film3Activity">
+
+    <!-- Nama Aplikasi di Tengah Atas -->
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brazein Film"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/white"/>
+
+    <!-- Teks Kembali di Pojok Kiri Bawah -->
+    <TextView
+        android:id="@+id/tvKembali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAppName"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Kembali"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+
+    <!-- Foto Film -->
+    <ImageView
+        android:id="@+id/ivFilm"
+        android:layout_width="120dp"
+        android:layout_height="166dp"
+        android:layout_below="@id/tvKembali"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/bom"
+        tools:srcCompat="@drawable/bom" />
+
+    <!-- Nama Film -->
+    <TextView
+        android:id="@+id/tvFilmName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="13 Bom Dijakarta"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@id/ivFilm"
+        android:layout_toEndOf="@id/ivFilm"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/white"/>
+
+    <!-- Durasi Film -->
+    <TextView
+        android:id="@+id/tvDurasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Durasi: 144 Menit"
+        android:layout_below="@id/tvFilmName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/ivFilm"
+        android:textColor="@color/white"/>
+
+    <!-- Genre Film -->
+    <TextView
+        android:id="@+id/tvGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genre: Laga, Petualangan"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_below="@id/tvDurasi"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/ivFilm"/>
+
+    <!-- Sinopsis Film -->
+    <TextView
+        android:id="@+id/tvSinopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jakarta, kota metropolitan dengan segala hingar bingarnya, seketika menjadi
+kelam. Sekumpulan teroris melancarkan serangannya dengan ancaman 13 bom yang disebar di
+seantero Jakarta. Penelusuran Badan Intelijen dan agen rahasia atas teror tersebut mengarah
+pada Oscar (Chicco Kurniawan) dan William (Ardhito Pramono) yang dianggap terlibat. Misi
+tim agen rahasia pun menjadi rumit ketika mereka mencurigai adanya penyusup dalam tim.
+Di sisi lain, pemimpin kelompok teroris, Arok (Rio Dewanto) tak henti menebar teror
+dengan meledakkan bom setiap 8 jam. Satu-satunya cara menghentikan serangan teror
+tersebut adalah menyerahkan imbalan bernilai miliaran rupiah dalam bentuk bitcoin
+kepada Arok atau keselamatan seluruh warga Jakarta terancam."
+        android:layout_below="@id/ivFilm"
+        android:layout_marginTop="10dp"
+        android:layout_alignStart="@id/ivFilm"
+        android:textColor="@color/white"/>
+
+    <!-- Button Pesan -->
+    <!-- Button Pesan -->
+    <Button
+        android:id="@+id/btnPesan"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textColorLink="@android:color/white"
+        android:text="Pesan"
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>

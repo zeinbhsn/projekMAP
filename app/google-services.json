@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "239015594136",
+    "project_id": "projekmap-ebe9c",
+    "storage_bucket": "projekmap-ebe9c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239015594136:android:294f4d47443465993ce8ed",
+        "android_client_info": {
+          "package_name": "com.example.projekmap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlXbCLbCUzwvfM76QufSxvMzKrx-5xV-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

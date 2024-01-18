@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Film1Activity">
+
+    <!-- Nama Aplikasi di Tengah Atas -->
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brazein Film"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/white"/>
+
+    <!-- Teks Kembali di Pojok Kiri Bawah -->
+    <TextView
+        android:id="@+id/tvKembali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAppName"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Kembali"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+
+    <!-- Foto Film -->
+    <ImageView
+        android:id="@+id/ivFilm"
+        android:layout_width="120dp"
+        android:layout_height="166dp"
+        android:layout_below="@id/tvKembali"
+        android:layout_marginTop="11dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/dilan"/>
+
+    <!-- Nama Film -->
+    <TextView
+        android:id="@+id/tvFilmName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dilan 1990"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@id/ivFilm"
+        android:layout_toEndOf="@id/ivFilm"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/white"/>
+
+    <!-- Durasi Film -->
+    <TextView
+        android:id="@+id/tvDurasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Durasi: 110 Menit"
+        android:layout_below="@id/tvFilmName"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/ivFilm"
+        android:textColor="@color/white"/>
+
+    <!-- Genre Film -->
+    <TextView
+        android:id="@+id/tvGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genre: Roman, Komedi, Melodrama, Drama"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_below="@id/tvDurasi"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/ivFilm"/>
+
+    <!-- Sinopsis Film -->
+    <TextView
+        android:id="@+id/tvSinopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Milea (Vanesha Prescilla) bertemu dengan Dilan (Iqbaal Ramadhan) di sebuah SMA
+di Bandung. Itu adalah tahun 1990, saat Milea pindah dari Jakarta ke Bandung. Perkenalan yang tidak
+biasa kemudian membawa Milea mulai mengenal keunikan Dilan lebih jauh. Dilan yang pintar, baik
+hati dan romantis... semua dengan caranya sendiri. Cara Dilan mendekati Milea tidak sama dengan
+teman-teman lelakinya yang lain, bahkan Beni, pacar Milea di Jakarta. Bahkan cara berbicara Dilan
+yang terdengar kaku, lambat laun justru membuat Milea kerap merindukannya jika sehari saja ia tak
+mendengar suara itu. Perjalanan hubungan mereka tak selalu mulus. Beni, gank motor, tawuran,
+Anhar, Kang Adi, semua mewarnai perjalanan itu. Dan Dilan... dengan caranya sendiri...selalu bisa
+membuat Milea percaya ia bisa tiba di tujuan dengan selamat. Tujuan dari perjalanan ini.
+Perjalanan mereka berdua. Katanya, dunia SMA adalah dunia paling indah. Dunia Milea dan Dilan
+satu tingkat lebih indah daripada itu."
+        android:layout_below="@id/ivFilm"
+        android:layout_marginTop="10dp"
+        android:layout_alignStart="@id/ivFilm"
+        android:textColor="@color/white"/>
+
+    <!-- Button Pesan -->
+    <!-- Button Pesan -->
+    <Button
+        android:id="@+id/btnPesan"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:textColorLink="@android:color/white"
+        android:text="Pesan"
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>

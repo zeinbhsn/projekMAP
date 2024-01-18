@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".HalamanFilmActivity">
+
+    <!-- Nama Aplikasi di Pojok Kiri Atas -->
+    <!-- Nama Aplikasi di Tengah Atas -->
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brazein Film"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/white"/>
+
+    <!-- Baris Pertama -->
+    <LinearLayout
+        android:id="@+id/firstRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/tvAppName"
+        android:layout_marginTop="20dp">
+
+        <!-- Gambar dan Nama Film 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:id="@+id/ivFilm1"
+                android:layout_width="120dp"
+                android:layout_height="166dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dilan"
+                tools:srcCompat="@drawable/dilan" />
+            <TextView
+                android:id="@+id/tvFilm1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dilan 1990"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <!-- Gambar dan Nama Film 2 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:id="@+id/ivFilm2"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/idiot"
+                tools:srcCompat="@drawable/idiot" />
+            <TextView
+                android:id="@+id/tvFilm2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 Idiot"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Baris Kedua -->
+    <LinearLayout
+        android:id="@+id/secondRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/firstRow"
+        android:layout_marginTop="20dp">
+
+        <!-- Gambar dan Nama Film 3 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:id="@+id/ivFilm3"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bom"
+                tools:srcCompat="@drawable/bom" />
+            <TextView
+                android:id="@+id/tvFilm3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13 Bom Dijakarta"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <!-- Gambar dan Nama Film 4 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:id="@+id/ivFilm4"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/aquaman"
+                tools:srcCompat="@drawable/aquaman" />
+            <TextView
+                android:id="@+id/tvFilm4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aquaman and the Lost Kingdom"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Baris Ketiga -->
+    <LinearLayout
+        android:id="@+id/thirdRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/secondRow"
+        android:layout_marginTop="20dp">
+
+        <!-- Gambar dan Nama Film 5 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:id="@+id/ivFilm5"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cinta"
+                tools:srcCompat="@drawable/cinta" />
+            <TextView
+                android:id="@+id/tvFilm5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jatuh Cinta Seperti di Film-Film"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <!-- Gambar dan Nama Film 6 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:id="@+id/ivFilm6"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/budi"
+                tools:srcCompat="@drawable/budi" />
+            <TextView
+                android:id="@+id/tvFilm6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Budi Pekerti"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
