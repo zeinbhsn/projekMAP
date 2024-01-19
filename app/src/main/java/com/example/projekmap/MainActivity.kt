@@ -1,77 +1,86 @@
 package com.example.projekmap
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.projekmap.databinding.ActivityMainBinding
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var  binding: ActivityMainBinding
-    private lateinit var firebaseDatabase: FirebaseDatabase
-    private lateinit var databaseReference: DatabaseReference
-    lateinit var txtResult : TextView
-    lateinit var btnSubmit : Button
+    lateinit var btnLogin : Button
+    lateinit var etEmail : EditText
+    lateinit var etName : EditText
+    lateinit var etPassword : EditText
+    lateinit var txtRegister : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-        firebaseDatabase = FirebaseDatabase.getInstance()
-        databaseReference = firebaseDatabase.reference.child("users")
+        btnLogin = findViewById(R.id.loginButton)
+        etName = findViewById(R.id.loginUsername)
+        etPassword = findViewById(R.id.loginPassword)
 
-        binding.loginButton.setOnClickListener{
-            val loginUsername = binding.loginUsername.text.toString()
-            val loginPassword = binding.loginPassword.text.toString()
+        txtRegister = findViewById(R.id.signupRedirect)
 
-            if (loginUsername.isNotEmpty() && loginPassword.isNotEmpty()){
-                loginUser(loginUsername, loginPassword)
-            } else {
-                Toast.makeText(this@MainActivity, "All fields are mandatory", Toast.LENGTH_SHORT).show()
+        txtRegister.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnLogin.setOnClickListener {
+            this.auth(etEmail.text.toString(), etPassword.text.toString()) { isValid ->
+                if (!isValid) {
+                    Toast.makeText(
+                        applicationContext,
+                        "Username atau password salah!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    return@auth
+                }
+
+                val intent = Intent(this, HalamanFilmActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
-
-        binding.signupRedirect.setOnClickListener{
-            startActivity(Intent(this@MainActivity, SignupActivity::class.java))
-            finish()
-        }
-
-
     }
 
-    private fun loginUser(username: String, password: String){
-        databaseReference.orderByChild("username").equalTo(username).addListenerForSingleValueEvent(object : ValueEventListener{
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists()){
-                    for (userSnapshot in dataSnapshot.children){
-                        val userData = userSnapshot.getValue(UserData::class.java)
+    private fun auth(email: String, password: String, checkResult: (isValid: Boolean) -> Unit) {
+        val db = Firebase.firestore
+        db.collection("users").whereEqualTo("email", email)
+            .get()
+            .addOnSuccessListener { documents ->
+                var isValid = false
 
-                        if (userData != null && userData.password == password){
-                            Toast.makeText(this@MainActivity, "Login Successfull", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this@MainActivity, HalamanFilmActivity::class.java))
-                            finish()
-                            return
-                        }
+                for (document in documents) {
+                    var pass = document.data.get("password").toString()
+
+                    if (!pass.equals(PasswordHelper.md5(password).toString() )) {
+                        break
                     }
+
+                    val sharedPreference =  getSharedPreferences(
+                        "app_preference", Context.MODE_PRIVATE
+                    )
+
+                    var editor = sharedPreference.edit()
+                    editor.putString("id", document.id.toString())
+                    editor.putString("name", document.data.get("name").toString())
+                    editor.putString("email", document.data.get("email").toString())
+                    editor.commit()
+
+                    isValid = true
                 }
-                Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_SHORT).show()
 
+                checkResult.invoke(isValid)
             }
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                Toast.makeText(this@MainActivity, "Database Error: ${databaseError.message}", Toast.LENGTH_SHORT).show()
-
-
-            }
-        })
     }
 }
